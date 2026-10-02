@@ -7,6 +7,7 @@
 <body>
     <header>
         <h1>My Guitar Shop</h1>
+        <p>Session ID: <?php echo session_id(); ?></p>
     </header>
     <main>
 
