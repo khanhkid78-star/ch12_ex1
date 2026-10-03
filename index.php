@@ -53,5 +53,16 @@ switch($action) {
         unset($_SESSION['cart12']);
         include('cart_view.php');
         break;
+
+
+    case 'end_session':
+        session_unset();
+        session_destroy();
+        
+        // 3. Xóa cookie session trên trình duyệt bằng cách đặt thời gian hết hạn trong quá khứ
+        setcookie(session_name(), '', time() - 3600, '/');
+        
+        include('add_item_view.php');
+        break;
 }
 ?>
